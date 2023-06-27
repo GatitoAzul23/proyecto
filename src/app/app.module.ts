@@ -14,7 +14,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarruselComponent } from './carrusel/carrusel.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { InicioComponent } from './inicio/inicio.component';
-
 //listado de servicios
 import { InicioSesionService } from './servicios/inicio-sesion.service';
 import { UsuariosService } from './servicios/usuarios.service';
@@ -31,11 +30,12 @@ import { UsuariosService } from './servicios/usuarios.service';
     CarruselComponent
   ],
   imports: [
+    //aqui van los API de Angular material
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [
     InicioSesionService,
