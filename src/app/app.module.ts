@@ -14,9 +14,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarruselComponent } from './carrusel/carrusel.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { InicioComponent } from './inicio/inicio.component';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonModule} from '@angular/material/button';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
+
 //listado de servicios
 import { InicioSesionService } from './servicios/inicio-sesion.service';
 import { UsuariosService } from './servicios/usuarios.service';
+
 
 
 @NgModule({
@@ -27,7 +33,8 @@ import { UsuariosService } from './servicios/usuarios.service';
     EncabezadoComponent,
     UsuariosComponent,
     InicioComponent,
-    CarruselComponent
+    CarruselComponent,
+    DashboardComponent
   ],
   imports: [
     //aqui van los API de Angular material
@@ -36,6 +43,8 @@ import { UsuariosService } from './servicios/usuarios.service';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MatMenuModule,
+    MatButtonModule
   ],
   providers: [
     InicioSesionService,

@@ -1,0 +1,16 @@
+#ligas{
+    padding-top: 10px;
+}
+button:hover{
+    background-color: darkcyan;
+}
+button{
+
+    background-color: palevioletred;
+    border-radius: 10px;
+    padding: 10px;
+    width: 180px;
+    height: 40px;
+    color: whitesmoke;
+    font-size: large;   
+}
