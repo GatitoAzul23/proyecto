@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { InicioSesionService } from '../servicios/inicio-sesion.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-inicio-sesion',
@@ -17,29 +18,42 @@ export class InicioSesionComponent {
   inicioSesion(){
     this.ServicioLogin.login(this.usuario).subscribe(
       res=>{
-        alert("Bienvenido "+ res.env.nombre+ " "+res.env.apellido_paterno);
+        // alert("Bienvenido "+ res.env.nombre+ " "+res.env.apellido_paterno);
+        Swal.fire({
+          title: 'Bienvenido: '+ res.env.nombre+ ' '+ res.env.apellido_paterno,
+          icon: 'success',
+          timer: 2000,
+        });
+        console.log(res);
+        localStorage.setItem("email", res.env.email);
         localStorage.setItem("usuario", res.env.nombre);
         localStorage.setItem("token", res.env.jwtoken);
+        localStorage.setItem("perfil", res.env.tipo);
         this.router.navigate(['/dashboard']);
-
       },
       err=>{
-        alert("Error al iniciar sesión");
-      }
-    );
-  }
-
-  registrarUsuario(){
-    this.ServicioLogin.registro(this.usuario).subscribe(
-      res=>{
-        alert("Empleado guardado");
+        // alert("Usuario no autorizado");
+        Swal.fire({
+          title: 'Usuario no autorizado',
+          icon: 'error',
+          timer: 2000,
+        });
         this.limpiar_campos();
-      },
-      err=>{
-        alert("Ingrese sus datos correctamente");
       }
+
     );
   }
+  // registrarUsuario(){
+  //   this.ServicioLogin.registro(this.usuario).subscribe(
+  //     res=>{
+  //       alert("Empleado guardado");
+  //       this.limpiar_campos();
+  //     },
+  //     err=>{
+  //       alert("Ingrese sus datos correctamente");
+  //     }
+  //   );
+  // }
 
   limpiar_campos(){
     this.usuario.password = "";

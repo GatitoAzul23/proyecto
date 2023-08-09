@@ -1,0 +1,104 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="/assets/css/formularios.css">
+<div id="main-content">
+  <div class="contenedor"> 
+    <div class="encabezado ">
+      <h1>Registrar producto</h1>
+    </div>  
+    <div class="cuerpo ">
+      <div class="field ">
+        <label class="label">Nombre</label>
+        <div class="control has-icons-left">
+            <input class="input" type="text" placeholder="Nombre del producto" [(ngModel)]="producto.nombre">
+        </div>
+      </div>
+      <div class="columns">
+          <div class="field column">
+              <label class="label">Precio</label>
+              <div class="control has-icons-left">
+                  <input class="input" type="number"  [(ngModel)]="producto.precio">
+                  <span class="icon is-small is-left">
+                      <i class="fa-solid fa-dollar-sign"></i>
+                  </span>
+              </div>
+          </div>
+          <div class="field column">
+              <label class="label">Código</label>
+              <div class="control has-icons-left">
+                  <input class="input" type="number" placeholder="Código del producto" [(ngModel)]="producto.codigo">
+                  <span class="icon is-small is-left">
+                      <i class="fa-solid fa-tag"></i>
+                  </span>
+              </div>
+          </div>
+          <div class="field column">
+              <label class="label">Existencias</label>
+              <div class="control has-icons-left">
+                  <input class="input " type="number" [(ngModel)]="producto.existencia" >
+              </div>
+          </div>
+      </div>
+        
+        <div class="field">
+            <label class="label">Descripción</label>
+            <div class="control has-icons-left">
+              <textarea class="textarea " [(ngModel)]="producto.descripcion"></textarea>
+            </div>
+        </div>
+        <div class="field">
+          <label class="label">Imagen</label>
+          <div class="control has-icons-left">
+            <input type="file" id="imagen" name="imagen" [(ngModel)]="producto.imgurl"
+            accept="image/png, image/jpeg, image/gif" (change)="fotoseleccionada($event)" >
+          </div>
+          <!-- <div *ngIf="producto.imgurl!=''; else otraimg">
+              <img src="{{producto.imgurl}}" alt="" width="100" height="100">
+          </div>
+          <ng-template #otraimg>
+            <img src="../../assets/images/camara.png" alt="" width="100" height="100">
+        </ng-template> -->
+      </div>
+        
+        <div class="field" id="boton">
+            <div class="">
+                <button class="button is-primary" (click)="guardarProducto()">
+                    <span>
+                    <i class="fa-solid fa-pencil"></i>
+                    Registrar
+                    </span>
+                </button>
+            </div>
+        </div>
+        <!-- inicio de la tabla -->
+        <br><br>
+        <h1>Productos existentes</h1>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Código</th>
+                <th scope="col">Existencias</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Imagen</th>
+              </tr>
+            </thead>
+            <tbody>
+             <tr *ngFor="let pro of productos 
+              | paginate: { itemsPerPage: 5, currentPage: page } | async  "> 
+                <th>{{pro.nombre}}</th>
+                <td>{{pro.precio}}</td>
+                <td>{{pro.codigo}}</td>
+                <td>{{pro.existencia}}</td>
+                <td>{{pro.descripcion}}</td>
+                <td><img src="{{pro.imgurl}}" alt="" width="100px" height="100px"></td>
+                <td><a href="" [routerLink] = "['/productos/codigo', pro.codigo]">Detalle</a></td>
+              </tr>
+            </tbody>
+          </table>  
+          <pagination-controls (pageChange)="page = $event" 
+          previousLabel="Anterior" 
+          nextLabel="Siguiente"></pagination-controls>
+    </div>
+  </div>
+</div>

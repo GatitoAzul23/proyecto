@@ -1,42 +1,21 @@
-<!-- <div id="cuerpo">
-    <div id="contenedor">
-        <div id="logo">
-            <img src="../../assets/images/Logos InterDental/logo inter 1.png" alt="">
-        </div>
-        <div id="formulario">
-            <div>
-                <div class="form-floating">
-                <input type="text" class="form-control" id="floatingInput" name="email" [(ngModel)]="usuario.email" placeholder="name@example.com">
-                <label for="floatingInput">Correo electronico</label>
-            </div>
-            <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" name="password" [(ngModel)]="usuario.password" placeholder="Password">
-                <label for="floatingPassword">Contraseña</label>
-            </div>
-            </div>
-        </div>
-        <div id="boton">
-            <button type="button" class="float" (click)="inicioSesion()">Inicio de sesión</button>
-        </div>
-    </div>
-</div> -->
+<app-encabezado></app-encabezado>
 <div id="cuerpo">
     <div class="form">
         <div id="logo">
-            <img src="../../assets/images/Logos InterDental/logo inter 1.png" alt="">
+            <img src="./assets/images/Logos InterDental/logo inter 1.png" alt="">
         </div>
             <div class="form_container">
                 <div class="form_groupp">
-                   <input type="email" id="email" class="form_input" [(ngModel)]="usuario.email" placeholder=""> 
-                   <label for="email" class="form_label">Email</label>
-                   <span class="form_line"></span>
+                    <input type="email" id="email" class="form_input" [(ngModel)]="usuario.email" placeholder=""> 
+                    <label for="email" class="form_label">Correo electrónico</label>
+                    <span class="form_line"></span>
                 </div>
                 <div class="form_groupp">
                     <input type="password" id="password" class="form_input" [(ngModel)]="usuario.password" placeholder=""> 
                     <label for="password" class="form_label">Contraseña</label>
                     <span class="form_line"></span>
-                 </div>
-                 <div id="boton">
+                </div>
+                <div id="boton">
                     <button type="button" class="float" (click)="inicioSesion()">Inicio de sesión</button>
                 </div>
             </div>   

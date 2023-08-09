@@ -1,41 +1,30 @@
-
-<div id="contenedor" *ngIf="ServicioLogin.eslogueado(), else falso">
-  <!-- !: Cambiar por un side navbar es temporal  -->
-  <div class="row align-items-center justify-content-between" >
-    <nav class="nav">
-      <div id="ligas">
-        <a href="#home">Inicio</a>
-        <a href="#about">Nosotros</a>
-        <a href="/inicio/#servicios">Servicios</a>
-        <a href="/inicio/#reviews">Reseñas</a>
-        <a href="/inicio/#mapa">Ubicación</a>
-        <a href="/appinterdental">Nuestra App</a>
-      </div> 
-      <div>
-        <a href="" class="link-btn" id="boton" (click)="cerrarSesion()">Cerrar sesión</a>
-      </div>
-    </nav>
-  </div>
-  
-</div>
-<ng-template #falso>
-  <div id="contenedor">
-    <div class="row align-items-center justify-content-between" >
-      <nav class="nav">
-        <div id="ligas">
-          <a href="#home">Inicio</a>
-          <a href="#about">Nosotros</a>
-          <a href="/inicio/#servicios">Servicios</a>
-          <a href="/inicio/#reviews">Reseñas</a>
-          <a href="/inicio/#mapa">Ubicación</a>
-          <a href="/appinterdental">Nuestra App</a>
-        </div> 
-        <div>
-          <button type="button" class="float" routerLink="login">Inicio de sesión</button>
-          <!-- <a href="" class="link-btn" id="boton" routerLink="login">Iniciar sesión</a> -->
-          
+<!-- <div style="height: 100px; width: 100%;"> -->
+<div id="contiene">
+    <header class="header fixed-top">
+        <div id="logoI">
+            <img src="./assets/images/Logos InterDental/logo inter 3.png" alt="" id="logoI">
         </div>
-      </nav>
-    </div>
-  </div>
-</ng-template>
+        <div id="menu">
+            <div id="contenedor">
+                <div class="row align-items-center justify-content-between" >
+                    <nav class="nav">
+                        <div class="ligas">
+                            <a href="#home">Inicio</a>
+                            <a href="#about">Nosotros</a>
+                            <a href="/inicio/#servicios">Servicios</a>
+                            <a href="/inicio/#reviews">Reseñas</a>
+                            <a href="/inicio/#mapa">Ubicación</a>
+                            <a href="" routerLink = "productos/catalogo">Productos</a>
+                            <a href="/appinterdental">Nuestra app</a>
+                        </div> 
+                        <div>
+                            <button type="button" class="float" routerLink="login">Inicio de sesión</button>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>  
+    </header>    
+</div>
+<!-- </div> -->
+

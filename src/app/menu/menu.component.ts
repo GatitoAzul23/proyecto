@@ -11,6 +11,6 @@ export class MenuComponent {
   cerrarSesion(){
     this.ServicioLogin.logout();
   }
-  
+
 }
 

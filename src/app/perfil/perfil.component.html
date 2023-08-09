@@ -1,0 +1,113 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="/assets/css/formularios.css">
+<div id="main-content">
+    <div class="contenedor"> 
+      <div class="encabezado ">
+        <h1>Mi perfil</h1>
+      </div>
+      <div class="cuerpo ">
+          <div class="columns">
+            <div class="field column">
+              <label class="label">Nombre</label>
+              <div class="control">
+                <input class="input" type="text" [(ngModel)]="empleado.nombre" disabled>
+              </div>
+            </div>
+            <div class="field column">
+              <label class="label">Apellido paterno</label>
+              <div class="control">
+                <input class="input" type="text" [(ngModel)]="empleado.apellido_paterno" disabled>
+              </div>
+            </div> 
+            <div class="field column">
+              <label class="label">Apellido materno</label>
+              <div class="control">
+                <input class="input" type="text" [(ngModel)]="empleado.apellido_materno" disabled>
+              </div>
+            </div>
+          </div>
+          <div class="columns">
+            <div class="field column">
+                <label class="label">Fecha de nacimiento</label>
+                <div class="control has-icons-left">
+                  <input class="input" type="date" [(ngModel)]="empleado.fecha_nac" disabled>
+                  <span class="icon is-small is-left">
+                    <i class="fa-solid fa-calendar-days"></i>
+                  </span>
+                </div>
+            </div>
+            <div class="field column">
+                <label class="label">Correo electrónico</label>
+                <div class=" control has-icons-left">
+                  <input class="input" type="text" [(ngModel)]="empleado.email" disabled>
+                  <span class="icon is-small is-left">
+                    <i class="fa-solid fa-envelope"></i>
+                  </span>
+                </div>
+          </div>
+            <div class="field column">
+              <label class="label">Teléfono</label>
+              <div class=" control has-icons-left">
+                <input class="input" type="text" [(ngModel)]="empleado.telefono" disabled>
+                <span class="icon is-small is-left">
+                  <i class="fa-solid fa-phone"></i>
+                </span>
+              </div>
+            </div>
+        </div>
+        <!-- <div class="field columns">
+            <div class="column">
+              <button class="button is-warning is-light" (click)="modificar()" >
+                <span>
+                  <i class="fa-solid fa-pencil"></i>
+                  Modificar
+                </span>
+              </button>
+            </div>
+            <div class="column">
+              <button class="button is-danger is-light" (click)="eliminar()">
+                <span>
+                  <i class="fa-solid fa-trash"></i>
+                  Eliminar
+                </span>
+              </button>
+          </div>
+          <div class="column">
+            <button class="button is-info is-light" [routerLink] = "['/empleados']">
+              <span>
+                <i class="fa-solid fa-arrow-left"></i>
+                Regresar
+              </span>
+          </button>
+        </div> -->
+      </div>
+      <br><br>
+      <div class="cuerpo">
+            <h1>Cambiar contraseña</h1>
+            <div class="field ">
+                <label class="label">Contraseña actual</label>
+                <div class="control">
+                    <input class="input" type="password" [(ngModel)]="usuario.password_ant">
+                </div>
+            </div>
+            
+            <div class="field">
+                <label class="label">Nueva contraseña</label>
+                <div class="control">
+                    <input class="input" type="password" [(ngModel)]="usuario.password">
+                </div>
+            </div>
+            <h3>Nota: Debes incluir al menos una letra mayúscula, una minúscula, un número y un símbolo</h3>
+            <div class="field columns">
+              <div class="column">
+                    <button class="button is-warning is-light" (click)="cambiarContra()">
+                    <span>
+                        <i class="fa-solid fa-pencil"></i>
+                        Modificar
+                    </span>
+                    </button>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>

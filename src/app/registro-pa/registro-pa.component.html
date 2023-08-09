@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="/assets/css/formularios.css">
+<div id="main-content">
+    <div class="contenedor"> 
+        <div class="encabezado ">
+            <h1>Registrar paciente</h1>
+        </div>  
+        <div class="cuerpo ">
+            <div class="columns">
+                <div class="field column">
+                    <label class="label">Nombre</label>
+                    <div class="control">
+                        <input class="input" type="text" [(ngModel)]="paciente.nombre">
+                    </div>
+                </div>
+                <div class="field column">
+                    <label class="label">Apellido paterno</label>
+                    <div class="control">
+                    <input class="input" type="text" [(ngModel)]="paciente.apellido_paterno">
+                    </div>
+                </div> 
+                <div class="field column">
+                    <label class="label">Apellido materno</label>
+                    <div class="control">
+                    <input class="input" type="text" [(ngModel)]="paciente.apellido_materno">
+                    </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="field column">
+                    <label class="label">Teléfono</label>
+                    <div class=" control has-icons-left">
+                        <input class="input" type="text" [(ngModel)]="paciente.telefono">
+                        <span class="icon is-small is-left">
+                            <i class="fa-solid fa-phone"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="field column">
+                    <label class="label">Email</label>
+                    <div class=" control has-icons-left">
+                    <input class="input" type="text" [(ngModel)]="paciente.email">
+                    <span class="icon is-small is-left">
+                        <i class="fa-solid fa-envelope"></i>
+                    </span>
+                    </div>
+                </div>
+            </div> 
+            <div class="field">
+                <label class="label">Fecha de nacimiento</label>
+                <div class="control has-icons-left">
+                    <input class="input" type="date" [(ngModel)]="paciente.fecha_nac">
+                    <span class="icon is-small is-left">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Alergias</label>
+                <div class="control">
+                    <input class="input" type="text" [(ngModel)]="paciente.alergias">
+                </div>
+            </div>
+            <div class="field" id="boton">
+                <div class="">
+                    <button class="button is-primary " (click)="registrar()" >
+                        <span>
+                        <i class="fa-solid fa-pencil"></i>
+                        Registrar
+                        </span>
+                    </button>
+                </div>
+            </div>  
+        </div>
+    </div>
+</div>

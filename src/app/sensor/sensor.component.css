@@ -1,0 +1,15 @@
+#imagen{
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+}
+.card{
+    margin-bottom: 20px;
+}
+.cuerpo{
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    
+}

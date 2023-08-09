@@ -1,0 +1,131 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="/assets/css/formularios.css">
+<div id="main-content">
+  <div class="contenedor"> 
+        <div class="encabezado ">
+            <h1 class="titulo">Citas</h1>
+        </div>  
+        <div class="cuerpo ">
+            <!-- Aqui inicia el modulo de consultar las citas de hoy -->
+            <h1>Citas de hoy</h1>
+            <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">Fecha</th>
+                <th scope="col">Hora</th>
+                <th scope="col">Correo electrónico</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let env of citas | async"> 
+                <th>{{env.fecha}}</th>
+                <td>{{env.hora}}</td>
+                <td>{{env.email}}</td>
+                <td><button></button></td>
+                </tr>
+            </tbody>
+            </table>
+            <!-- Termina el modulo de las citas de hoy -->
+        </div>
+        <br><br>
+        <div class="cuerpo">
+            <!-- Aqui inicia el modulo de registrar una cita -->
+            <h1>Agendar cita</h1>
+            <div class="field ">
+                <label class="label">Email</label>
+                <div class="control has-icons-left">
+                    <input class="input" type="email" [(ngModel)]="cita.email" placeholder="Email del paciente">
+                    <span class="icon is-small is-left">
+                        <i class="fa-solid fa-envelope"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="field column">
+                    <label class="label">Fecha</label>
+                    <div class="control has-icons-left">
+                        <input class="input" type="date" [(ngModel)]="cita.fecha">
+                        <span class="icon is-small is-left">
+                            <i class="fa-solid fa-calendar-days"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="field column">
+                    <label class="label">Hora</label>
+                    <div class="control has-icons-left">
+                        <div class="select is-normal has-icons-left">
+                            <select name="" id="" [(ngModel)]="cita.hora">
+                                <option value="10:00">10:00</option>
+                                <option value="10:30">10:30</option>
+                                <option value="11:00">11:00</option>
+                                <option value="11:30">11:30</option>
+                                <option value="12:00">12:00</option>
+                                <option value="12:30">12:30</option>
+                                <option value="13:00">13:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="16:30">16:30</option>
+                                <option value="17:00">17:00</option>
+                                <option value="17:30">17:30</option>
+                                <option value="18:00">18:00</option>
+                            </select>
+                        </div>
+                        <span class="icon is-small is-left">
+                            <i class="fa-solid fa-clock"></i>
+                        </span>
+                    </div>
+                </div>
+            </div> 
+            <div class="field" id="boton">
+                <div class="">
+                    <button class="button is-primary " (click)="registrar()" >
+                        <span>
+                        <i class="fa-solid fa-pencil"></i>
+                        Registrar
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <!-- Termina el modulo de registrar una cita   -->
+        </div>
+        <br><br>
+        <div class="cuerpo">
+            <h1>Consultar citas</h1>
+        <div class="columns">
+          <div class="field column">
+            <div class="control has-icons-left">
+              <input class="input" type="date" placeholder="Ingresa la fecha" [(ngModel)]="citaR.fecha">
+              <span class="icon is-small is-left">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </span>
+            </div>
+          </div>
+          <div class="column">
+            <button class="button is-info is-light" (click)="consultarUno()">Consultar</button>
+          </div>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Fecha</th>
+              <th scope="col">Hora</th>
+              <th scope="col">Correo electrónico</th>
+              <th scope="col">Cancelar</th>
+            </tr>
+          </thead>
+          <tbody>
+           <tr *ngFor="let env of citasF | async"> 
+              <th>{{env.fecha}}</th>
+              <td>{{env.hora}}</td>
+              <td>{{env.email}}</td>
+              <td><button class="button is-danger is-light" [routerLink] = "['/citas/cancelar/', env.fecha, env.hora]">
+                <span>
+                  <i class="fa-solid fa-trash"></i>
+                  Cancelar
+                </span>
+              </button></td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+  </div>
+</div>

@@ -1,0 +1,104 @@
+<div style="width: 100%; height: 100px;">
+  <header class="header fixed-top">
+    <div id="logoI">
+        <img src="./assets/images/Logos InterDental/logo inter 3.png" alt="" id="logoI">
+    </div>
+    <div id="contenedor">  
+      <nav class="nav">
+        <div class="ligas">
+          <ul>
+            <div id="home">
+              <a href="" routerLink="dashboard">
+                <span>
+                  <i class="fa-solid fa-house fa-2xl"></i>
+                </span>
+              </a>
+              <a href="" routerLink="/perfil">
+                <span>
+                  <i class="fa-solid fa-user fa-2xl"></i>
+                  
+                </span>
+              </a>
+            </div>
+            <!-- !Un nuevo elemento -->
+            <div class="apartado">
+              <!-- Principal es la unica parte que se muestra -->
+              <li class="principal">
+                  <span>
+                    <i class="fa-solid fa-hospital-user fa-2xl"></i>
+                    Pacientes
+                  </span>
+              </li>
+              <div class="opciones">
+                  <li><a href="" routerLink="pacientes/registroPa">Registro</a></li>
+              </div>
+              <div class="opciones">
+                <li><a href="" routerLink="pacientes">Consulta</a></li>
+            </div>
+            </div>
+            <!-- !Un nuevo elemento -->
+            <div class="apartado">
+              <li class="principal">
+                <span>
+                  <i class="fa-solid fa-cash-register fa-2xl"></i>
+                  Cobros
+                </span>
+              </li>
+              <div class="opciones">
+                <li><a href="" routerLink="cobros">Nuevo</a></li>
+              </div>
+            </div>
+            
+            <div class="apartado">
+              <!-- Principal es la unica parte que se muestra -->
+              <li class="principal">
+                <span>
+                  <i class="fa-solid fa-calendar-days fa-2xl"></i>
+                  Citas
+                </span>
+              </li>
+              <div class="opciones">
+                <li><a href="" routerLink="citas/agendar">Registro</a></li>
+              </div>
+              
+            </div>
+            
+            <div class="apartado">
+              <li class="principal">
+                <span>
+                  <i class="fa-solid fa-square-plus fa-2xl"></i>
+                  Otros
+                </span>
+              </li>
+              <div class="opciones">  
+                <li>
+                  <i class="fa-solid fa-user-doctor fa-2xl"></i>
+                  <a href="" routerLink="empleados">Empleados</a>
+                </li>
+              </div>
+              <div class="opciones">  
+                <li>
+                  <i class="fa-solid fa-kit-medical fa-2xl"></i>
+                  <a href="" routerLink="productos">Productos</a>
+                </li>
+              </div>
+              <div class="opciones">  
+                <li>
+                  <i class="fa-solid fa-wind fa-2xl"></i>
+                  <a href="" routerLink="sensor">Sensor</a>
+                </li>
+              </div>
+            </div>
+            
+          </ul>
+        </div> 
+        <div>
+            <button type="button" class="float" (click)="cerrarSesion()">Cerrar sesión</button>
+        </div>
+      </nav>
+    </div> 
+  </header>  
+</div>  
+
+
+

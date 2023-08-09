@@ -10,13 +10,17 @@ export class InicioSesionService {
 
   constructor(private router:Router, private http:HttpClient) { }
 
-  login(usuario:object){
-    return this.http.post<any>(this.url+"/iniciosesion", usuario);
+  // login(usuario:object){
+  //   return this.http.post<any>(this.url+"/iniciosesion", usuario);
+  // }
+
+    login(usuario:object){
+    return this.http.post<any>(this.url+"/login", usuario);
   }
 
-  registro(usuario:object){
-    return this.http.post<any>(this.url + "/registro", usuario);
-  }
+  // registro(usuario:object){
+  //   return this.http.post<any>(this.url + "/registro", usuario);
+  // }
 
   logout(){
     localStorage.clear();
@@ -30,4 +34,17 @@ export class InicioSesionService {
       return false;
     }
   }
+
+  cambiarContra(usuario: object){
+    return this.http.put<any>(this.url +"/actualizar", usuario);
+  }
+
+  consultarUno(usuario: object){
+    return this.http.post<any>(this.url+"/consultar", usuario);
+  }
+
+  tuperfil(){
+    return localStorage.getItem("perfil");
+  }
+  
 }

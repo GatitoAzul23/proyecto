@@ -1,0 +1,136 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="/assets/css/formularios.css">
+<div id="main-content">
+    <div class="contenedor"> 
+      <div class="encabezado ">
+        <h1>Registro de empleados</h1>
+      </div>
+      <div class="cuerpo ">
+        <div class="columns">
+            <div class="field column">
+              <label class="label">Nombre</label>
+              <div class="control">
+                <input class="input" type="text" [(ngModel)]="empleado.nombre">
+              </div>
+            </div>
+          <div class="field column">
+              <label class="label">Apellido paterno</label>
+              <div class="control">
+                <input class="input" type="text" [(ngModel)]="empleado.apellido_paterno">
+              </div>
+          </div> 
+          <div class="field column">
+              <label class="label">Apellido materno</label>
+              <div class="control">
+                <input class="input" type="text" [(ngModel)]="empleado.apellido_materno">
+              </div>
+          </div>
+        </div>
+        <div class="columns">
+            <div class="field column">
+                <label class="label">Fecha de nacimiento</label>
+                <div class="control has-icons-left">
+                  <input class="input" type="date" [(ngModel)]="empleado.fecha_nac">
+                  <span class="icon is-small is-left">
+                    <i class="fa-solid fa-calendar-days"></i>
+                  </span>
+                </div>
+            </div>
+            <div class="field column">
+                <label class="label">Correo electrónico</label>
+                <div class=" control has-icons-left">
+                  <input class="input" type="text" [(ngModel)]="empleado.email">
+                  <span class="icon is-small is-left">
+                    <i class="fa-solid fa-envelope"></i>
+                  </span>
+                </div>
+            </div>
+            <div class="field column">
+              <label class="label">Teléfono</label>
+              <div class=" control has-icons-left">
+                <input class="input" type="text" [(ngModel)]="empleado.telefono">
+                <span class="icon is-small is-left">
+                  <i class="fa-solid fa-phone"></i>
+                </span>
+              </div>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="field column">
+                <label class="label">RFC</label>
+                <div class=" control has-icons-left">
+                  <input class="input" type="text" [(ngModel)]="empleado.rfc">
+                </div>
+            </div>
+            <div class="field column">
+                <label class="label">Número de seguro social</label>
+                <div class=" control has-icons-left">
+                  <input class="input" type="text" [(ngModel)]="empleado.nss">
+                </div>
+            </div>
+        </div> 
+        <div class="columns">
+            <div class="field column">
+                <label class="label">Salario</label>
+                <div class=" control has-icons-left">
+                  <input class="input" type="number" [(ngModel)]="empleado.sueldo">
+                </div>
+            </div>
+            <div class="field column">
+                <label class="label">Puesto</label>
+                <div class=" control has-icons-left">
+                    <div class="select is-rounded">
+                        <select [(ngModel)]="empleado.puesto">
+                          <option>Administrador</option>
+                          <option>Empleado</option>
+                        </select>
+                      </div>
+                </div>
+            </div> 
+        </div>
+        <div class="field" id="boton">
+            <div class="">
+                <button class="button is-primary " (click)="registrar()" >
+                    <span>
+                    <i class="fa-solid fa-pencil"></i>
+                    Registrar
+                    </span>
+                </button>
+            </div>
+        </div> 
+        <!-- inicio de la tabla -->
+        <br><br>
+        <h1>Productos existentes</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Apellido paterno</th>
+                  <th scope="col">Apellido materno</th>
+                  <th scope="col">Fecha de nacimiento</th>
+                  <th scope="col">Correo electrónico</th>
+                  <th scope="col">Teléfono</th>
+                  <th scope="col">Puesto</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let emp of empleados 
+                  | paginate: { itemsPerPage: 5, currentPage: page } | async  "> 
+                  <th>{{emp.nombre}}</th>
+                  <td>{{emp.apellido_paterno}}</td>
+                  <td>{{emp.apellido_materno}}</td>
+                  <td>{{emp.fecha_nac}}</td>
+                  <td>{{emp.email}}</td>
+                  <td>{{emp.telefono}}</td>
+                  <td>{{emp.puesto}}</td>
+                  <td><a href="" [routerLink] = "['/empleados/detalle', emp.email]">Detalle</a></td>
+                </tr>
+              </tbody>
+            </table>  
+            <pagination-controls (pageChange)="page = $event" 
+              previousLabel="Anterior" 
+              nextLabel="Siguiente">
+            </pagination-controls>
+      </div>
+    </div>
+</div>

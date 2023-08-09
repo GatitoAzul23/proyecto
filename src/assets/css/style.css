@@ -19,7 +19,7 @@
    box-sizing: border-box;
    outline: none; border:none;
    text-decoration: none !important;
-   text-transform: capitalize;
+   /* text-transform: capitalize; */
 }
 
 *::-webkit-scrollbar{
@@ -50,7 +50,7 @@ section{
    text-align: center;
    font-size: 4rem;
    color:var(--black);
-   text-transform: uppercase;
+   /* text-transform: uppercase; */
    font-weight: bolder;
    margin-bottom: 3rem;
 }
@@ -123,7 +123,7 @@ section{
 
 .home .content h3{
    font-size: 6rem;
-   text-transform: uppercase;
+   /* text-transform: uppercase; */
    color:var(--black);
 }
 

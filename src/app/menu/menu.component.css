@@ -1,6 +1,40 @@
-#ligas{
+
+#contiene{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-wrap: wrap;
+    position: fixed;
+    position: static;
+}
+#logoM{
+    height: 20px;
+    align-items: center;
+    float: left;
+    padding: 10px;
+}
+#logoI{
+    height: 60px;
+    align-items: center;
+    float: left;
+    padding: 10px;
+}
+#menu{
+    height: 50px;
+    padding-top: 20px;
+    align-items: center;
+    float: right;
+}
+#logoD{
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+}
+.ligas{
     padding-top: 10px;
 }
+
 button:hover{
     background-color: darkcyan;
 }
@@ -14,3 +48,5 @@ button{
     color: whitesmoke;
     font-size: large;   
 }
+
+

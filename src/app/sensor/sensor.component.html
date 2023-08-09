@@ -1,0 +1,78 @@
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="/assets/css/formularios.css">
+
+<div id="main-content">
+    <div class="contenedor">
+        <div class="encabezado">
+            <h1>Lecturas del sensor de gas</h1>
+        </div>
+        
+        <div class="cuerpo">
+            <div class="card" style="width: 30rem;">
+                <div id="imagen">
+                    <img src="../../assets/images/gas.png" class="card-img-top" alt="..." style="height: 100px; width: 100px;">
+                </div>
+                <div class="card-body">
+                    <label class="label">Lectura actual en PPM:</label>
+                    <input type="text" [(ngModel)]="sensor.lectura"> 
+                </div>
+            </div>
+            <div class="field columns">
+                <div class="column">
+                    <button class="button is-info is-light" (click)="starTimer()" >
+                        <span>
+                            <i class="fa-solid fa-play"></i>
+                        Iniciar lectura
+                        </span>
+                    </button>
+                </div>
+                <div class="column">
+                    <button class="button is-danger is-light" (click)="detenerLectura()">
+                        <span>
+                            <i class="fa-solid fa-stop"></i>
+                        Detener
+                        </span>
+                    </button>
+                </div>
+                <div class="column">
+                    <button class="button is-primary is-light" (click)="guardarLectura()">
+                        <span>
+                            <i class="fa-solid fa-pencil"></i>
+                        Guardar
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <!-- <div style="padding-left: 30%; padding-bottom: 15%;">
+                <input type="button" value="Iniciar Lectura" (click)="starTimer()">
+                <input type="button" value="Detener Lectura" (click)="detenerLectura()">
+                <input type="button" value="Guardar" (click)="guardarLectura()">
+            </div> -->
+        </div>
+        <div style="height: 20px;"></div>
+        <div class="cuerpo">
+            <h1>Lecturas previas </h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Hora</th>
+                        <th scope="col">Medición en PPM</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr  *ngFor = "let sensor of info| async"> 
+                        <th>{{sensor.fecha}}</th>
+                        <td>{{sensor.hora}}</td>
+                        <td>{{sensor.lectura}}</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+    

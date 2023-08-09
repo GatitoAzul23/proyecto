@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="/assets/css/formularios.css">
+<div id="main-content">
+    <div class="contenedor"> 
+        <div class="encabezado ">
+            <h1 class="titulo">Confirmar la cancelación</h1>
+        </div>  
+        <br><br>
+        <div class="cuerpo">
+            <!-- Aqui inicia el modulo de registrar una cita -->
+            <h1>Agendar cita</h1>
+            <div class="field ">
+                <label class="label">Email</label>
+                <div class="control has-icons-left">
+                    <input class="input" type="email" [(ngModel)]="cita.email" placeholder="Email del paciente" disabled>
+                    <span class="icon is-small is-left">
+                        <i class="fa-solid fa-envelope"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="field column">
+                    <label class="label">Fecha</label>
+                    <div class="control has-icons-left">
+                        <input class="input" type="text" [(ngModel)]="cita.fecha" disabled>
+                        <span class="icon is-small is-left">
+                            <i class="fa-solid fa-calendar-days"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="field column">
+                    <label class="label">Hora</label>
+                    <div class="control has-icons-left">
+                        <input class="input" type="text" [(ngModel)]="cita.hora" disabled>
+                        <span class="icon is-small is-left">
+                            <i class="fa-solid fa-clock"></i>
+                        </span>
+                    </div>
+                </div>
+            </div> 
+            <div class="columns">
+                <div class="field column" id="boton">
+                    <div class="">
+                        <button class="button is-danger is-light " (click)="eliminarCita()" >
+                            <span>
+                                <i class="fa-solid fa-trash"></i>
+                                Cancelar cita
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="field column" id="boton">
+                    <div class="">
+                        <button class="button is-info is-light" [routerLink] = "['/citas/agendar']">
+                            <span>
+                                <i class="fa-solid fa-arrow-left"></i>
+                                Regresar
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Termina el modulo de registrar una cita   -->
+        </div> 
+    </div>
+</div>

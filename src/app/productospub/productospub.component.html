@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+
+<section>
+    <div class="encabezado1">
+        <h1 style="font-family: sans-serif;  font-size: xx-large; padding-top: 10px; color: rgb(3, 56, 135)">Productos disponibles</h1>
+        
+    </div>
+    <div class="encabezado">
+        <h3>Adquiéralos en su clínica más cercana</h3>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-lg-3 mb-2-6" *ngFor="let pro of productos | async">
+                <div class="card-wrapper mb-4">
+                    <div class="card-img"><img src="{{pro.imgurl}}" alt="..." style="width: 200px; height: 200px;"></div>
+                    <div class="card-body">
+                        <div>
+                            <a href="#"><i class="bg-white p-3 rounded-circle ti-shopping-cart font-weight-600"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h4 class="h5 mb-2"><a href="#" class="text-secondary" style="font-size: larger;">{{pro.nombre}}</a></h4>
+                    <h5 class="mb-0 text-primary" style="font-size: larger;">${{pro.precio}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
